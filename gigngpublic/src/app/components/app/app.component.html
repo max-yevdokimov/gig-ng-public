@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="col-md-6 mb-4 d-flex justify-content-between">
+        <button type="button" class="btn" routerLink="generator" routerLinkActive #rla1="routerLinkActive" [ngClass]="{'btn-primary': rla1.isActive, 'btn-secondary': !rla1.isActive}">Generator</button>
+        <button type="button" class="btn" routerLink="payments" routerLinkActive #rla2="routerLinkActive" [ngClass]="{'btn-primary': rla2.isActive, 'btn-secondary': !rla2.isActive}">Payments</button>
+    </div>
+    <div class="col-md-6">
+        <router-outlet></router-outlet>
+    </div>
+</div>

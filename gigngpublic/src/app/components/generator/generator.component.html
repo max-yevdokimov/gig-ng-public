@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header" *ngIf="!hideGrid">
+        <div class="row justify-content-between">
+            <input type="text" placeholder="character" maxlength="1" class="form-control col-md-3"
+                [disabled]="isInputDisabled" (input)="inputChanged($event.target.value)" />
+            <button type="button" class="btn btn-secondary" (click)="generateGrid()">Generate 2D grid</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <ng-container *ngIf="!hideGrid">
+            <div class="row" *ngFor="let row of grid">
+                <div class="col-md-1" *ngFor="let col of row">{{getChar(col)}}</div>
+            </div>
+        </ng-container>
+        <div class="card-footer mt-4 text-center">
+            <div>
+                Your code: <b>{{code}}</b>
+            </div>
+        </div>
+    </div>
+</div>
